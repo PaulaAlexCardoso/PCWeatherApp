@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>PCWeatherApp</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a city.."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-light shadow-sm"
+                />
+              </div>
+            </div>
+          </form>
+          <br />
+          <br />
+          <div class="overview">
+            <h1 id="city"></h1>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <li><span id="date"></span></li>
+                  <li id="description"></li>
+                </ul>
+                <ul>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> Km/h</li>
+                </ul>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <form class="row">
+              <div class="col">
+                <div class="weekday">
+                  Wed
+                  <div class="dayemoji">
+                    ⛅️
+                    <div class="daytemp">
+                      <span class="today-min"> 14º</span>
+                      <span class="today-max"> 23º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Thu
+                  <div class="dayemoji">
+                    ⛅️
+                    <div class="daytemp">
+                      <span class="today-min"> 13º</span>
+                      <span class="today-max"> 27º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Fri
+                  <div class="dayemoji">
+                    ☀️
+                    <div class="daytemp">
+                      <span class="today-min"> 13º</span>
+                      <span class="today-max"> 27º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Sat
+                  <div class="dayemoji">
+                    ☀️
+                    <div class="daytemp">
+                      <span class="today-min"> 17º</span>
+                      <span class="today-max"> 28º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Sun
+                  <div class="dayemoji">
+                    ☀️
+                    <div class="daytemp">
+                      <span class="today-min"> 16º</span>
+                      <span class="today-max"> 27º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Mon
+                  <div class="dayemoji">
+                    ⛅️
+                    <div class="daytemp">
+                      <span class="today-min"> 16º</span>
+                      <span class="today-max"> 27º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="weekday">
+                  Tue
+                  <div class="dayemoji">
+                    ⛅️
+                    <div class="daytemp">
+                      <span class="today-min"> 17º</span>
+                      <span class="today-max"> 27º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="weather-forecast" id="forecast"></div>
+          </div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/PaulaAlexCardoso/PaulaCardoso.WeatherApp"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Paula Cardoso
+        </small>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
