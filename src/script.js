@@ -106,8 +106,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Lisbon");
-
-// apiKey = "63o24tc707a5bac999adf36b7637f03e"
-// apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`
-// apiUrl = "https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}"
-// apiUrl = "https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}"
