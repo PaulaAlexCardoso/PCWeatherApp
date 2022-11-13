@@ -21,7 +21,8 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast() {
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -56,6 +57,12 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function getForecast(coordinates) {
+  let apiKey = "63o24tc707a5bac999adf36b7637f03e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -83,8 +90,9 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "e4e31cadfe9cd000a8217e3ad8373382";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "63o24tc707a5bac999adf36b7637f03e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -98,4 +106,8 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Lisbon");
-displayForecast();
+
+// apiKey = "63o24tc707a5bac999adf36b7637f03e"
+// apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}&units=metric`
+// apiUrl = "https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}"
+// apiUrl = "https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}"
