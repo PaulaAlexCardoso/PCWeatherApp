@@ -26,7 +26,7 @@ li:first-letter {
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 800px;
   margin: 30px auto;
 }
 
@@ -63,13 +63,18 @@ li:first-letter {
   text-align: right;
 }
 .weather-forecast {
-  margin-top: 30px;
+  margin-top: 80px;
   margin-left: 5px;
   text-align: center;
   color: #656565;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
+.weather-forecast-temperature-min {
+  opacity: 0.7;
+  font-size: 18px;
+}
+
 .search-form {
   margin-bottom: 20px;
 }
